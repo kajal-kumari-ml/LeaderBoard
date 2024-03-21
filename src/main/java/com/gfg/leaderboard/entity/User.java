@@ -34,7 +34,7 @@ public class User {
         badge=new HashSet<>();
     }
 
-    public User(Long id, String name,int score, Set<Badge> badge, String email) {
+    public User(Long id, String name,String email,int score, Set<Badge> badge) {
        
         this.id=id;
         this.name = name;
