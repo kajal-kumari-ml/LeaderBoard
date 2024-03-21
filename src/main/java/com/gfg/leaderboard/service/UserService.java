@@ -32,16 +32,6 @@ public class UserService {
             if (user.getEmail() != null && !user.getEmail().contains("@")) {
                 throw new InvalidArgument("Please provide a valid email");
             }
-            
-            if (user.getScore() < 0 || user.getScore() > 100) {
-                throw new InvalidArgument("score should be in between 0 to 100");
-            }
-            Set <Badge> badge = new HashSet<>();
-            Badge assignBadge= setUserBadge(user.getScore());
-            if (assignBadge != null) {
-                badge.add(assignBadge);
-            }
-            user.setBadge(badge);
             return userRepository.save(user);
         }  catch (InvalidArgument e) {
             throw new InvalidArgument("Please provide a important field");
