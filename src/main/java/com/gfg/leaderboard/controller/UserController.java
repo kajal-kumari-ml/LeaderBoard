@@ -33,7 +33,7 @@ public class UserController {
     
      @PostMapping("/user")
     public ResponseEntity<?> createUser(@Validated @RequestBody User user) {
-        if (user.getName() == null || user.getEmail() == null){
+        if (user.getId()==null||user.getName() == null || user.getEmail() == null){
             return new ResponseEntity<>("Please Provide Important Information", HttpStatus.BAD_REQUEST);
         }
        

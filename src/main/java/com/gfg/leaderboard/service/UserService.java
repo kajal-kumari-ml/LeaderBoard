@@ -85,7 +85,7 @@ public class UserService {
         } catch (SomethingUnexpectedHappen e) {
             throw new SomethingUnexpectedHappen("Unexpected error occurred while updating user. Please try again.");
         }  catch (InvalidArgument e) {
-            throw new InvalidArgument("Please provide a important field");
+            throw new InvalidArgument("score should be in between 0 to 100");
         }
     }
 
