@@ -29,10 +29,11 @@ public class User {
     private int score;
 
     @Column(name = "badge")
-    private Set<Badge> badge= new HashSet<>();
+    private Set<Badge> badge; 
 
     public User() {
         score=0;
+        badge=new HashSet<>();
     }
 
     public User(Long id, String name,int score, Set<Badge> badge, String email) {
