@@ -44,13 +44,13 @@ contain buisness logic
 # Repository class
 aceess the information from db.
 
-# POST create user
-# PUT update the score
-# GET get detail according to desc order
-# GET get detail by id 
-## DELETE delete the user.
+ POST create user
+ PUT update the score
+ GET get detail according to desc order
+ GET get detail by id 
+ DELETE delete the user.
 
-here i have attached postman link
+# here i have attached postman link
 [Postman Collection ](https://winter-flare-851632.postman.co/workspace/kajal~ed0bd169-879d-4182-a30e-8d7e212ef617/request/15511430-9fd1d636-4a70-4911-a658-a4180ea70268)
 
 
