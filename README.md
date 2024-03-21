@@ -33,15 +33,14 @@ Rough Idea:
 One class have must : id, name
 initial score is 0 and badge is empty
 
-## Entity Class 
+# Entity Class 
 User-> id,name ,email,score,Badge
 
 # controller class
-## POST create user,
-![alt text][]
-## PUT update the score,
-## GET get detail according to desc order, 
-## GET get detail by id, 
+# POST create user
+# PUT update the score
+# GET get detail according to desc order
+# GET get detail by id 
 ## DELETE delete the user.
 
 
