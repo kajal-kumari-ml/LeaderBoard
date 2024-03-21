@@ -62,16 +62,16 @@ public class UserService {
     }
 
     
-    public User updateUser(User user, Long id) {
+    public User updateUser(int score, Long id) {
         try {
             User existingUser = getUserByIdHelper(id);
 
-            if (user.getScore() < 0 || user.getScore() > 100) {
+            if (score < 0 || score > 100) {
                 throw new InvalidArgument("score should be in between 0 to 100");
             }
-            existingUser.setScore(user.getScore());
+            existingUser.setScore(score);
 
-            Badge badge= setUserBadge(user.getScore());
+            Badge badge= setUserBadge(score);
             Set<Badge> badges= existingUser.getBadge();
             if(badges.isEmpty()) {
                 badges= new HashSet<>();             
@@ -86,6 +86,8 @@ public class UserService {
             throw new SomethingUnexpectedHappen("Unexpected error occurred while updating user. Please try again.");
         }  catch (InvalidArgument e) {
             throw new InvalidArgument("score should be in between 0 to 100");
+        }catch (UserNotFound e) {
+            throw new UserNotFound("User not found");
         }
     }
 
@@ -99,6 +101,8 @@ public class UserService {
             throw new SomethingUnexpectedHappen("Unexpected error occurred while fetching user. Please try again.");
         }
     }
+
+    
 
     
     public void deleteUser(Long id) {
@@ -125,6 +129,8 @@ public class UserService {
         }
        
     }
+
+    
 
     private User getUserByIdHelper(Long id) {
         Optional<User> user = userRepository.findById(id);

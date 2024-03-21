@@ -51,9 +51,9 @@ public class UserController {
 
     //update the user
     @PutMapping("/user/{id}")
-    public ResponseEntity<?> updateUser(@Validated @RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<?> updateUser(@RequestParam int score, @PathVariable Long id) {
         try {
-            User savedUser = userService.updateUser(user, id);
+            User savedUser = userService.updateUser(score, id);
             return new ResponseEntity<>(savedUser, HttpStatus.OK);
         } catch (UserNotFound e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
